@@ -14,17 +14,19 @@ guessresult(){
 	elif [[ $1 -lt $number ]]
 	then
 		echo "Too low"
-		
 	fi
 }
 
-if [[ $answer =~ ^[0-9]+$ ]]
-then
-	until [[ $answer -eq $number ]]
-	do
+until [[ $answer -eq $number ]]
+do
+	if [[ $answer =~ ^[0-9]+$ ]]
+	then
 		guessresult $answer
-		read answer
-	done
-	echo "You win"
-fi
+	else
+		echo "Only positive numbers"
+	fi
+	read answer
+done
+
+echo "You win"
 
