@@ -28,5 +28,5 @@ do
 	read answer
 done
 
-echo "You win"
-
+echo "You win!!!"
+exit 0
